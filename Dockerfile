@@ -1,17 +1,4 @@
-FROM brikerman/ubuntu20_python3:3.8.9
-
-ARG VERSION="0.0.1"
-
-ENV PYTHONPATH=/code/ \
-  PYTHONIOENCODING=utf-8 \
-  API_RUN_ENV=docker \
-  TERM=xterm-256color \
-  PYTHONDONTWRITEBYTECODE=1 \
-  PYTHONUNBUFFERED=1 \
-  API_VERSION=$VERSION \
-  DISPLAY=:99
-
-WORKDIR /code
+FROM FROM python:3.9
 
 # install google chrome
 RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
